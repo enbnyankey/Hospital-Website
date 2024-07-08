@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <script src="https://kit.fontawesome.com/7011d7cfb7.js" crossorigin="anonymous"></script>
+  
+    <style>
+        /* Container styles */
+
+        :root{
+            --green: #16a085;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            border-radius: 10px;
+            background-color: rgb(255, 254, 252); /* Background color */
+            background-image: url('images/R.jpeg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #080808;
+            text-align: left;
+            text-shadow: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #16a085;
+            font-family: "Poppins", sans-serif;
+            
+        }
+
+        .btn{
+            padding: 10px;
+            font-size: 18px;
+            background: var(--green);
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: rgba(0,0, 0, 0.2);
+            border: 1px solid var(--green);
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Video element styles */
+        #videoElement {
+            width: 640px;
+            height: 480px;
+            margin: 15px;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 10px;
+            border: 2px solid #16a085;
+        }
+
+        #prediction-container{
+           width: 200px;
+           height: 100px;
+           border: .5px solid#16a085;
+           border-radius: 5px;
+           top: 50%;
+           margin: 10px;
+           background: #0b0a0a;
+           color: #fff;
+        }
+
+        /* Hidden canvas for capturing video frames */
+        #canvasElement {
+            display: none;
+        }
+
+        /* Style file input to look like a button */
+        #fileInput {
+            display: none;
+        }
+
+        .custom-file-upload {
+            padding: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            background: #16a085;
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 2ps  rgba(0,0, 0, 0.2);
+            border: 2px solid #16a085;
+            cursor: pointer;
+            margin-right: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-user"></i> Emotion Detection</h1>
+
+        <!-- Video feed from webcam -->
+        <video id="videoElement" autoplay playsinline></video>
+
+        <!-- Canvas for capturing image from video -->
+        <canvas id="canvasElement"></canvas>
+
+        <!-- Buttons for video recording and file upload -->
+        <div>
+            <button id="startRecord" class="btn" onclick="startRecording()">Start Recording</button>
+            <button id="stopRecord"  class="btn"  onclick="stopRecording()" style="display:none;">Stop Recording</button>
+            <label for="fileInput" class="custom-file-upload">Choose File</label>
+            <input type="file" name="file" id="fileInput" accept=".jpg, .jpeg, .png">
+            <button id="uploadButton" class="btn" onclick="uploadFile()">Upload Image</button>
+        </div>
+
+        <!-- Display predicted emotion -->
+        <div id="prediction-container"></div>
+    </div>
+
+    <!-- Script for webcam video recording -->
+    <script>
+        let videoElement = document.getElementById('videoElement');
+        let canvasElement = document.getElementById('canvasElement');
+        let startRecordBtn = document.getElementById('startRecord');
+        let stopRecordBtn = document.getElementById('stopRecord');
+        let fileInput = document.getElementById('fileInput');
+        let uploadButton = document.getElementById('uploadButton');
+        let emotionResult = document.getElementById('emotionResult');
+
+        let stream = null;
+        let videoRecorder = null;
+
+        // Start recording video from webcam
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (mediaStream) {
+                    stream = mediaStream;
+                    videoElement.srcObject = mediaStream;
+                    videoElement.play();
+                    videoRecorder = new MediaRecorder(mediaStream);
+                    videoRecorder.ondataavailable = handleDataAvailable;
+                    videoRecorder.start();
+                    startRecordBtn.style.display = 'none';
+                    stopRecordBtn.style.display = 'inline-block';
+                })
+                .catch(function (err) {
+                    console.error('Error accessing webcam:', err);
+                });
+        }
+
+        // Stop recording video from webcam
+        function stopRecording() {
+            if (videoRecorder && videoRecorder.state !== 'inactive') {
+                videoRecorder.stop();
+                stream.getTracks().forEach(track => track.stop());
+                startRecordBtn.style.display = 'inline-block';
+                stopRecordBtn.style.display = 'none';
+            }
+        }
+
+        // Handle captured video data
+        function handleDataAvailable(event) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let formData = new FormData();
+                formData.append('file', event.data, 'video.webm');
+                fetch('/upload_image', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('prediction-container').innerText = `Predicted Emotion: ${data.pred_emotion}`;
+                })
+                .catch(error => {
+                    console.error('Error uploading image:', error);
+                });
+            };
+            reader.readAsArrayBuffer(event.data);
+        }
+
+        // Handle file input change and upload
+        fileInput.addEventListener('change', function() {
+            let formData = new FormData();
+            formData.append('file', this.files[0]);
+            fetch('/upload_image', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('prediction-container').innerText = `Predicted Emotion: ${data.pred_emotion}`;
+            })
+            .catch(error => {
+                console.error('Error uploading image:', error);
+            });
+        });
+    </script>
+</body>
+</html>
