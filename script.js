@@ -4,6 +4,8 @@ let navbar =document.querySelector('.navbar');
 let blogscontainer = document.querySelector(".box-container-blog");
 
 
+
+
 let blogs_list =[
     {
         "imgPath":"images/download (2).jpeg",
@@ -58,7 +60,7 @@ for(let i=0; i<blogs_list.length; i++){
 
 }
 
-
+//
 menu.onclick =()=>{
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
@@ -71,10 +73,11 @@ window.onscroll = ()=>{
 // pop menu 
 
 let popup = document.getElementById("popup");
-
     function openPopup(){
         popup.classList.add("open-popup");
     }
+
+
     function closePopup(){
         popup.classList.remove("open-popup");
     }
