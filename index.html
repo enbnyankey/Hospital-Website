@@ -6,6 +6,7 @@
     <title>Hospital Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/7011d7cfb7.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
   
     
 </head>
@@ -220,16 +221,15 @@
             <input type="number" placeholder="your number" class="box">
             <input type="email" placeholder="your email" class="box">
             <input type="date"  class="box">
-            <div class="container">
-                
-                    <input type="submit" value="submit" class="btn" onclick="openPopup()">
+            <div class="container-1">
+                <input type="submit" value="submit" class="btn" onclick="openPopup()">
                     <div class="popup" id="popup">
                         <img src="images/404-tick.png" alt="">
                         <h2>Thank you!</h2>
                         <p>Your details has been succesfully submitted. Thank you! </p>
                         <input type="button" value="OK" onclick="closePopup()">
                     </div>
-            
+                </div>
                 </div>
 
             <!-- <input type="submit" value="book now" class="btn"  onclick="openPopup()">
@@ -300,53 +300,9 @@
     
     <h1 class="heading">our<span>blogs</span></h1>
 
-    <div class="box-container">
-
-        <div class="box">
-            <div class="image">
-                <img src="images/download (2).jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href=""><i class="fas fa-calender"></i>2nd July, 2024</a>
-                    <a href=""><i class="fas fa-user"></i>by admin</a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sit iure dicta nesciunt corrupti minus soluta odio ullam iste labore distinctio consequuntur sunt laboriosam aut dolorum ratione tempora rerum mollitia.</p>
-                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/download (1).jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href=""><i class="fas fa-calender"></i>2nd July, 2024</a>
-                    <a href=""><i class="fas fa-user"></i>by admin</a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sit iure dicta nesciunt corrupti minus soluta odio ullam iste labore distinctio consequuntur sunt laboriosam aut dolorum ratione tempora rerum mollitia.</p>
-                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/download.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href=""><i class="fas fa-calender"></i>2nd July, 2024</a>
-                    <a href=""><i class="fas fa-user"></i>by admin</a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sit iure dicta nesciunt corrupti minus soluta odio ullam iste labore distinctio consequuntur sunt laboriosam aut dolorum ratione tempora rerum mollitia.</p>
-                <a href="index1.html" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
-            </div>
-        </div>
+    <div class="box-container-blog"> 
     </div>
+    </section>
 
     <section class="footer">
         <div class="box-container-1">
@@ -393,6 +349,6 @@
 
 </section>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>

@@ -431,57 +431,57 @@ padding: 1rem 4rem;
 
 
 
-.blogs .box-container{
+.blogs .box-container-blog{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
 }
-.blogs .box-container .box{
+.blogs .box-container-blog .box{
     border: var(--border);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
     padding: 2rem;
 }
-.blogs .box-container .box .image{
+.blogs .box-container-blog .box .image{
     height: 20rem;
     overflow: hidden;
     border-radius: .5rem;
 }
-.blogs .box-container .box .image img{
+.blogs .box-container-blog .box .image img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.blogs .box-container .box:hover .image img{
+.blogs .box-container-blog .box:hover .image img{
     transform: scale(1.2);
 }
-.blogs .box-container .box .content{
+.blogs .box-container-blog .box .content{
     padding-top: 1rem;
 }
-.blogs .box-container .box .content .icon{
+.blogs .box-container-blog .box .content .icon{
     padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.blogs .box-container .box .content .icon a{
+.blogs .box-container-blog .box .content .icon a{
     font-size: 1.4rem;
     color: var(--light-color);
 }
-.blogs .box-container .box .content .icon a:hover{
+.blogs .box-container-blog .box .content .icon a:hover{
     color: var(--green);
 }
-.blogs .box-container .box .content .icon a i{
+.blogs .box-container-blog .box .content .icon a i{
     padding-right: .5rem;
     color: var(--green);
 }
-.blogs .box-container .box .content h3{
+.blogs .box-container-blog .box .content h3{
     color: var(--black);
     font-size: 3rem;
 }
 
-.blogs .box-container .box .content p{
+.blogs .box-container-blog .box .content p{
     color: var(--light-color);
     font-size: 1.5rem;
     padding: 1rem 0;
@@ -527,16 +527,16 @@ padding: 1rem 4rem;
 
 
 
-/* .container{
+/* .container-1{
     width:100%;
     height: 100vh;
-    background: #d36483;
+    /* background: #d36483; */
     display: flex;
     align-items: center;
     justify-content: center;
 
-}
-.btn{
+} */
+/* .btn{ 
     padding: 10px 60px;
     background-attachment: #fff;
     border: 0;
@@ -564,7 +564,7 @@ padding: 1rem 4rem;
 .open-popup{
      visibility: visible;
      top: 50%;
-     /* transform: translate(-50%, -50%) scale(1); */
+     transform: translate(-50%, -50%) scale(1);
 
 }
 .popup img{
@@ -579,7 +579,7 @@ padding: 1rem 4rem;
     font-weight: 500;
     margin: 30px 0 50px;
 }
-.popup input{
+.popup button{
     width: 100%;
     margin-top: 50px;
     padding: 10px 0;
@@ -592,6 +592,7 @@ padding: 1rem 4rem;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 
 
