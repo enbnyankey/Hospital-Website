@@ -6,7 +6,7 @@
     <title>Hospital Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/7011d7cfb7.js" crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
   
     
 </head>
@@ -240,8 +240,8 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <p class="text">Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion </p></div>
-
+            <p class="text">Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion </p>
+        </div>
             <div class="box">
                 <img src="images/OIP (3).jpeg" alt="">
                 <h3>John deo</h3>
@@ -254,7 +254,6 @@
                 </div>
                 <p class="text">Dr Brenner, is one of the best orthopeodic nurses her in this clinic. Worn the best all rounded personnel and won th ebest disciplined staff this year. We rcommend you to leave your reviews your  below </p>
             </div>
-
 
             <div class="box">
                 <img src="images/th.jpeg" alt="">
@@ -337,6 +336,83 @@ function openPopup(){
 function closePopup(){
     popup.classList.remove('open-popup');
 }
+</script>
+
+<script>
+    const stars = document.querySelectorAll(".stars i");
+
+stars.forEach((star, index1) => {
+    //Add an event listener that runs a w=function when the click event is triggered
+    star.addEventListener("click", () => {
+        
+    //loop through the stars modelist again
+        stars.forEach((star, index2) => {
+    //add the "active" class to the clicked star and any stars with low index
+    //remove the active when clicked 
+    index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+        });
+     });
+ });
+
+</script>
+<script>
+    let blogscontainer = document.querySelector(".box-container-blog");
+
+
+    let blogs_list =[
+    {
+        "imgPath":"images/download (2).jpeg",
+        "date": "2nd July, 2024",
+        "userType":"by admin",
+        "heading":"blog title goes here",
+        "content":"field"
+    },
+    {
+        "imgPath":"images/download (2).jpeg",
+        "date": "2nd July, 2024",
+        "userType":"by admin",
+        "heading":"wryjwryjwryj",
+        "content":"xfghjerjetr"
+    },
+    {
+        "imgPath":"images/download (2).jpeg",
+        "date": "2nd July, 2024",
+        "userType":"by admin",
+        "heading":"wryjwryjwryj",
+        "content":"xfghjerjetr"
+    },
+    {
+        "imgPath":"images/download (2).jpeg",
+        "date": "2nd July, 2024",
+        "userType":"by admin",
+        "heading":"wryjwryjwryj",
+        "content":"xfghjerjetr"
+    }
+];
+
+
+//display hospital blogs
+
+for(let i=0; i<blogs_list.length; i++){
+    let blog_item = `<div class="box">
+            <div class="image">
+                <img src="images/download (2).jpeg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href=""><i class="fas fa-calender"></i>2nd July, 2024</a>
+                    <a href=""><i class="fas fa-user"></i>by admin</a>
+                </div>
+                <h3>blog title goes here</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sit iure dicta nesciunt corrupti minus soluta odio ullam iste labore distinctio consequuntur sunt laboriosam aut dolorum ratione tempora rerum mollitia.</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+            </div>
+        </div>`;
+
+    blogscontainer.insertAdjacentHTML("beforeend", blog_item);
+
+}
+
 
 </script>
     

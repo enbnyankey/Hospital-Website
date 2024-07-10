@@ -71,7 +71,6 @@ window.onscroll =() =>{
 }
 
 // pop menu 
-
 let popup = document.getElementById("popup");
     function openPopup(){
         popup.classList.add("open-popup");
@@ -83,7 +82,7 @@ let popup = document.getElementById("popup");
     }
 
 //stars
-const stars =document.querySelectorAll(".stars i");
+const stars = document.querySelectorAll(".stars i");
 
     stars.forEach((star, index1) => {
         //Add an event listener that runs a w=function when the click event is triggered
