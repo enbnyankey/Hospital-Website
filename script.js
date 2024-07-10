@@ -61,11 +61,11 @@ for(let i=0; i<blogs_list.length; i++){
 }
 
 //
-menu.onclick =()=>{
+menu.onclick =() =>{
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 }
-window.onscroll = ()=>{
+window.onscroll =() =>{
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
 }
