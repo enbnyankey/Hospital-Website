@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 :root{
-    --green:#0b2822;
+    --green:#4c02c4;
     --black:#444;
     --emeraldgreen:#073720;
     --light-color:#777;
-    --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
-    --text-shadow:.4rem .4rem 0 rgba(0, 160, 0, .2);
+    --box-shadow:.5rem .5rem 0 rgba(69, 34, 207, 0.2);
+    --text-shadow:.4rem .4rem 0 rgba(66, 10, 209, 0.2);
     --border:.2rem solid var(--green);
 }
 
