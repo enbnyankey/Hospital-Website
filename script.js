@@ -136,20 +136,20 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbw4pw4jAM5yqsn9rrmhXY
         },
         {
             "imgPath":"images/OIP(2).jpeg",
-            "name": "sdfghjkl;",
-            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postiond"
+            "name": " Dr. Gwen Scott",
+            "content":"Dr.Gwen has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postiond"
             
         },
         {
             "imgPath":"images/OIP(3).jpeg",
-            "name": "dfghjklrfghjdfhvfnh",
-            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+            "name": "Dr. Anthony Yankey",
+            "content":"Dr.Anthony has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
             
         },
         {
             "imgPath":"images/OIP(1).jpeg",
-            "name": "dfghjklrfghjdfhvfnh",
-            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+            "name": "Dr. Ephraim Addo",
+            "content":"Dr.Ephraim has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
             
         }
 
