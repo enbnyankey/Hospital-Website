@@ -218,15 +218,19 @@
         </div>
 
 
-        <form action="">
+        <form name="submit-to-google-sheet">
             <h3>book appointment</h3>
             <input type="text" name="Name" placeholder="your name" class="box">
-            <input type="number" placeholder="your number" class="box">
+            <input type="tel" name="Number" placeholder="your number" class="box">
             <input type="email" name="Email" placeholder="your email" class="box">
-            <input type="date"  class="box">
+            <input type="date"  name="Date" class="box">
+            <textarea name="Message" rows="6" placeholder="Your Message" class="box"></textarea>
+
             <input type="submit" value="submit" class="btn" onclick="openPopup()">
         </form>
+        
     </div>
+    <span id="msg"></span>
 </section>
 
 

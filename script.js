@@ -102,3 +102,21 @@ const stars = document.querySelectorAll(".stars i");
             });
          });
      });
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw4pw4jAM5yqsn9rrmhXYoB5w8ErrKVOQtyrpP8uqmn2TPusVQouF-EZ5uCgSom_T8pPQ/exec'
+     const form = document.forms['submit-to-google-sheet']
+     const msg = document.getElementById("msg")
+   
+     form.addEventListener('submit', e => {
+       e.preventDefault()
+       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+         .then(response =>{
+             msg.innerHTML = "Mesaage sent Successfully"
+             setTimeout(function(){
+                 msg.innerHTML=""
+             }, 5000)
+             form.reset()
+         })
+         .catch(error => console.error('Error!', error.message))
+     })
