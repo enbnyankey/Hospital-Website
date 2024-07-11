@@ -351,12 +351,12 @@ padding: 1rem 4rem;
 } 
  
 
-.review .box-container{
+.review .box-container-review{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     gap: 2rem;
 }
-.review .box-container .box{
+.review .box-container-review .box{
     border: var(--border);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
@@ -367,14 +367,15 @@ padding: 1rem 4rem;
     overflow: hidden;
     z-index: 0;
 }
-.review .box-container .box img{
+.review .box-container-review .box img{
     height: 10rem;
     width: 10rem;
+    align-items: center;
     border-radius: 50%;
     object-fit: cover;
     border: .5rem solid #fff;
 }
-.review .box-container .box h3{
+.review .box-container-review .box h3{
     color: #fff;
     font-size: 2.2rem;
     padding: .5rem 0;
@@ -385,14 +386,14 @@ padding: 1rem 4rem;
     cursor: pointer;
 } */
 
-.review .box-container .box .text{
+.review .box-container-review .box .text{
     color: var(--light-color);
     line-height: 1.8;
     font-size: 1.6rem;
     padding-top: 4rem;
 }
 
-.review .box-container .box::before{
+.review .box-container-review .box::before{
     content:'';
     position: absolute;
     top: -4rem;left: 50%;

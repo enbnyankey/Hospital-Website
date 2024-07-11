@@ -120,3 +120,58 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbw4pw4jAM5yqsn9rrmhXY
          })
          .catch(error => console.error('Error!', error.message))
      })
+
+
+///Therapist reviews
+     let reviewcontainer = document.querySelector(".box-container-review");
+
+
+
+     let review_list =[
+        {
+            "imgPath":"images/OIP(4).jpeg",
+            "name": "John Doe",
+            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+            
+        },
+        {
+            "imgPath":"images/OIP(2).jpeg",
+            "name": "sdfghjkl;",
+            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postiond"
+            
+        },
+        {
+            "imgPath":"images/OIP(3).jpeg",
+            "name": "dfghjklrfghjdfhvfnh",
+            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+            
+        },
+        {
+            "imgPath":"images/OIP(1).jpeg",
+            "name": "dfghjklrfghjdfhvfnh",
+            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+            
+        }
+
+        
+     ];
+
+
+
+     for(let i=0; i<review_list.length; i++){
+        let review_item = `<div class="box">
+            <img src=${review_list[i].imgPath}>
+                <h3>${review_list[i].name}</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="text">${review_list[i].content}</div>`;
+    
+       reviewcontainer.insertAdjacentHTML("beforeend", review_item);
+    
+    }
+    
