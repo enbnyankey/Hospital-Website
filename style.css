@@ -3,7 +3,7 @@
 :root{
     --green:#4c02c4;
     --black:#444;
-    --emeraldgreen:#073720;
+    --emeraldgreen:#e8e812;
     --light-color:#777;
     --box-shadow:.5rem .5rem 0 rgba(69, 34, 207, 0.2);
     --text-shadow:.4rem .4rem 0 rgba(66, 10, 209, 0.2);
@@ -297,7 +297,7 @@ margin-left: .5rem;
     text-align: center;
 
 }   
-.doctors .box-container .box .share a:hover{
+.doctors .box-container.box .share a:hover{
     background: var(--green);
     color: #fff;
     box-shadow: var(--box-shadow);
@@ -396,12 +396,12 @@ padding: 1rem 4rem;
 .review .box-container-review .box::before{
     content:'';
     position: absolute;
-    top: -4rem;left: 50%;
+    top: -5rem;left: 50%;
     transform: translateX(-50%);
     background: var(--green);
     border-bottom-left-radius:50% ;
     border-bottom-right-radius:50% ;
-    height: 25rem;
+    height: 28rem;
     width: 120%;
     z-index: -1;
 }

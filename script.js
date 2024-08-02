@@ -58,7 +58,7 @@ for(let i=0; i<blogs_list.length; i++){
                 </div>
                 <h3>${blogs_list[i].heading}</h3>
                 <p>${blogs_list[i].content}</span></a>
-                <a href=${blogs_list[i].link}><button class="btn">Learn More</button></a>
+                <a href=${blogs_list[i].link}><button class="btn">Read More</button></a>
             </div>
         </div>`;
 
@@ -87,23 +87,6 @@ let popup = document.getElementById("popup");
         popup.classList.remove("open-popup");
     }
 
-//stars
-const stars = document.querySelectorAll(".stars i");
-
-    stars.forEach((star, index1) => {
-        //Add an event listener that runs a w=function when the click event is triggered
-        star.addEventListener("click", () => {
-            
-        //loop through the stars modelist again
-            stars.forEach((star, index2) => {
-        //add the "active" class to the clicked star and any stars with low index
-        //remove the active when clicked 
-        index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
-            });
-         });
-     });
-
-
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw4pw4jAM5yqsn9rrmhXYoB5w8ErrKVOQtyrpP8uqmn2TPusVQouF-EZ5uCgSom_T8pPQ/exec'
      const form = document.forms['submit-to-google-sheet']
      const msg = document.getElementById("msg")
@@ -122,56 +105,82 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbw4pw4jAM5yqsn9rrmhXY
      })
 
 
-///Therapist reviews
-     let reviewcontainer = document.querySelector(".box-container-review");
+// ///Therapist reviews
+//      let reviewcontainer = document.querySelector(".box-container-review");
 
 
 
-     let review_list =[
-        {
-            "imgPath":"images/OIP(4).jpeg",
-            "name": "John Doe",
-            "content":"Dr.John Darwin has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+//      let review_list =[
+//         {
+//             "imgPath":"images/R.jpeg",
+//             "name": "Dr. Emmanuel hope",
+//             "content":"Dr.Hopeson has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
             
-        },
-        {
-            "imgPath":"images/OIP(2).jpeg",
-            "name": " Dr. Gwen Scott",
-            "content":"Dr.Gwen has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postiond"
+//         },
+//         {
+//             "imgPath":"images/samuel-banner-2-1.jpg",
+//             "name": " Dr. Samuel Ato Bentil",
+//             "content":"Dr.samuel has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postiond"
             
-        },
-        {
-            "imgPath":"images/OIP(3).jpeg",
-            "name": "Dr. Anthony Yankey",
-            "content":"Dr.Anthony has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+//         },
+//         {
+//             "imgPath":"images/OIP (2).jpeg",
+//             "name": "Dr. Yao Azumah",
+//             "content":"Dr.Yao has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
             
-        },
-        {
-            "imgPath":"images/OIP(1).jpeg",
-            "name": "Dr. Ephraim Addo",
-            "content":"Dr.Ephraim has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
+//         },
+//         {
+//             "imgPath":"images/OIP(1).jpeg",
+//             "name": "Dr. Ephraim Addo",
+//             "content":"Dr.Ephraim has been recognized as one of the best psychologist in the clinic over a few years  now. He's been acknowledged as the best in this year and the previous year. His hardwork and perseverance towards this has gain and earned him this postion"
             
-        }
+//         }
 
         
-     ];
+//      ];
 
 
 
-     for(let i=0; i<review_list.length; i++){
-        let review_item = `<div class="box">
-            <img src=${review_list[i].imgPath}>
-                <h3>${review_list[i].name}</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <p class="text">${review_list[i].content}</div>`;
+//      for(let i=0; i<review_list.length; i++){
+//         let review_item = `<div class="box">
+//             <img src=${review_list[i].imgPath}>
+//                 <h3>${review_list[i].name}</h3>
+//             <div class="stars">
+//                 <i class="fas fa-star"></i>
+//                 <i class="fas fa-star"></i>
+//                 <i class="fas fa-star"></i>
+//                 <i class="fas fa-star"></i>
+//                 <i class="fas fa-star"></i>
+//             </div>
+//             <p class="text">${review_list[i].content}</div>`;
     
-       reviewcontainer.insertAdjacentHTML("beforeend", review_item);
+//        reviewcontainer.insertAdjacentHTML("beforeend", review_item);
+
+       
     
-    }
-    
+//     }
+// //stars
+// Select all containers that have the stars
+const starContainers = document.querySelectorAll(".stars");
+
+starContainers.forEach(container => {
+    // Select all stars within the current container
+    const stars = container.querySelectorAll("i");
+
+    stars.forEach((star, index1) => {
+        // Add an event listener that runs a function when the click event is triggered
+        star.addEventListener("click", () => {
+            // Loop through the stars NodeList again
+            stars.forEach((star, index2) => {
+                // Add the "active" class to the clicked star and any stars with lower index
+                // Remove the "active" class from other stars
+                index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+            });
+        });
+    });
+});
+
+
+    //doctors
+
+    //  let doctorscontainer = document.querySelector(".box-container-doctors");
