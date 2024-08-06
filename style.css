@@ -58,6 +58,7 @@ body {
     cursor: pointer;
     margin: 25px;
     border-radius: 60px;
+    text-decoration: none;
 }
 .login-box {
     background-color: #f6f6e9;
